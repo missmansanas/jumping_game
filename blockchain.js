@@ -14,7 +14,7 @@ function loadImagesOfMintedNfts() {
 
 async function mintOrSelect(element) {
   if (signer == undefined) {
-    alert("Connect MetaMask to mint this.");
+    alert("Connect MetaMask.");
   }
   if (window.nftScore < 1) {
     alert("Collect NFTs to mint!");
@@ -31,7 +31,7 @@ async function mintOrSelect(element) {
   );
 
   if (localStorage.getItem(element.id) == null) {
-    const cidOfJsonFiles = "QmSec3RSuey57xRQbb4Ut9ZeukRiMSUt2MUX935Nu1BHQe"; // Update the CID for the metadata if you have decided to change the skins for the game
+    const cidOfJsonFiles = "QmYQYe65myBYcMpsT5B4Lp5N1LK7RYWKazBXi7Kb1MvWA9"; // Update the CID for the metadata if you have decided to change the skins for the game
     const tokenURI =
       `https://ipfs.io/ipfs/${cidOfJsonFiles}/` + element.id + ".json";
     const tx = await skinsContract.connect(signer).mint(tokenURI);
